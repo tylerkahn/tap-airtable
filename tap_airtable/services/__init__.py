@@ -229,7 +229,7 @@ class Airtable(object):
         params = {}
 
         if fields:
-            params["fields[]"] = list(fields)
+            params["fields[]"] = [f for f in list(fields) if f != "id"]
         if offset:
             params["offset"] = offset
 
